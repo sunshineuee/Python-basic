@@ -1,7 +1,12 @@
 t = int(input("длительность в секундах = "))
-if t<60:
-    print(f"{t} сек")
-elif t < 60 * 60:
-    print(f"{t // 60} мин {t % 60} сек")
-elif t<60*60*24:
-    print(f"{t//24} дн {t//60} мин {t%60} сек")
+
+list_s = [24 * 60 * 60, 60 * 60, 60, 1]
+list_names = ["дн", "ч", "мин", "c"]
+result = ""
+rest = t
+for i in range(4):
+    if t // list_s[i] > 0:
+        result = f"{result} {str(rest // list_s[i])} {list_names[i]}"
+        rest = rest % list_s[i]
+
+print(result)
