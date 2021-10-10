@@ -1,62 +1,36 @@
-
 class Stationery:
     def __init__(cls, title):
         cls.title = title
-        print(f'{title} project')
 
-    @staticmethod
-    def draw(obj, tool):
-        print('Start rendering')
-        print(f'{tool} has drawn {obj}')
+    def draw(self):
+        print(f'{self.title} has drawn')
 
 
 class Pen(Stationery):
-    tool = 'Pen'
 
-    def __init__(cls, title):
-        super().__init__(title)
-
-    def use_tool(self, obj, tool=tool):
-        super().draw(obj, tool)
+    def draw(self):
+        print(f'{self.title} has drawn with pen')
 
 
 class Pencil(Stationery):
-    tool = 'Pencil'
 
-    def __init__(cls, title):
-        super().__init__(title)
-
-    def use_tool(self, obj, tool=tool):
-        super().draw(obj, tool)
+    def draw(self):
+        print(f'{self.title} has drawn with pencil')
 
 
 class Handle(Stationery):
-    tool = 'Handle'
+    def draw(self):
+        print(f'{self.title} has drawn with handle')
 
-    def __init__(cls, title):
-        super().__init__(title)
-
-    def use_tool(self, obj, tool=tool):
-        super().draw(obj, tool)
-
-
-print('-' * 100)
 
 pen = Pen('Face')
-pen.use_tool('circle')
-
-print('-' * 100)
+pen.draw()
 
 pen = Pen('Eyes')
-pen.use_tool('circle')
-pen.use_tool('circle')
-
-print('-' * 100)
+pen.draw()
 
 pencil = Pencil('Nose')
-pencil.use_tool('triangle')
-
-print('-' * 100)
+pencil.draw()
 
 handle = Handle('Mouth')
-handle.use_tool('arc')
+handle.draw()

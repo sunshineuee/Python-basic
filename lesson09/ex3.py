@@ -22,10 +22,10 @@ class Position(Worker):
         super().__init__(name, surname, position, *income)
 
     def get_full_name(self):
-        print(f'{super().full_name()[0]} {super().full_name()[1]}')
+        print(f'{self.full_name()[0]} {self.full_name()[1]}')
 
     def get_total_income(self):
-        print(f'Salary: {super().salary().get("wage") + super().salary().get("bonus")}')
+        print(f'Salary: {self.salary().get("wage") + self.salary().get("bonus")}')
 
 
 employee_1 = Position('Иван', 'Петров', 'электрик', 31000, 3000)
